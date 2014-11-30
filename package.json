@@ -22,6 +22,7 @@
   "homepage": "http://www.codehappy.io",
   "dependencies": {
     "gulp": "^3.8.10",
-    "jade": "^1.8.1"
+    "jade": "^1.8.1",
+    "stylus": "^0.49.3"
   }
 }
