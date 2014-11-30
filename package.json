@@ -1,0 +1,23 @@
+{
+  "name": "codehappy-www",
+  "version": "1.0.0",
+  "description": "The public facing Code Happy website.",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rdegges/codehappy-www.git"
+  },
+  "engines": {
+    "node": "0.10.33"
+  },
+  "keywords": [
+    "skeleton",
+    "express"
+  ],
+  "author": "Randall Degges",
+  "license": "UNLICNSE",
+  "bugs": {
+    "url": "https://github.com/rdegges/codehappy-www/issues"
+  },
+  "homepage": "http://www.codehappy.io"
+}
