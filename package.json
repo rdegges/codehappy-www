@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/rdegges/codehappy-www/issues"
   },
-  "homepage": "http://www.codehappy.io"
+  "homepage": "http://www.codehappy.io",
+  "dependencies": {
+    "gulp": "^3.8.10"
+  }
 }
