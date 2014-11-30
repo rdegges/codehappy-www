@@ -2,4 +2,5 @@
 *.html
 .DS_store
 bower_components
+dist
 node_modules
