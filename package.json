@@ -21,6 +21,7 @@
   },
   "homepage": "http://www.codehappy.io",
   "dependencies": {
-    "gulp": "^3.8.10"
+    "gulp": "^3.8.10",
+    "jade": "^1.8.1"
   }
 }
