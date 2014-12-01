@@ -52,6 +52,7 @@ gulp.task('views', function() {
  */
 gulp.task('images', function() {
   var images = [
+    './assets/images/*.ico',
     './assets/images/*.png',
     './assets/images/*.jpg',
     './assets/images/*.jpeg',
