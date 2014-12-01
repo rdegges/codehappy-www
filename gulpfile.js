@@ -8,6 +8,7 @@ var bower = require('gulp-bower');
 var del = require('del');
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
+var jade = require('gulp-jade');
 var liveReload = require('gulp-livereload');
 var stylus = require('gulp-stylus');
 var uglify = require('gulp-uglify');
@@ -25,6 +26,20 @@ gulp.task('css', function() {
   gulp.src('./assets/css/*.styl')
     .pipe(stylus({ compress: !DEBUG }))
     .pipe(gulp.dest(DIST_PATH + '/assets/css/'));
+});
+
+/**
+ * Compile all of our Jade templates into proper HTML files.
+ *
+ * If this app is in development mode, HTML will be pretty-printed -- otherwise,
+ * HTML will be compressed.
+ */
+gulp.task('views', function() {
+  gulp.src(['./views/**.jade', '!./views/includes/*'])
+    .pipe(jade({
+      pretty: DEBUG,
+    }))
+    .pipe(gulp.dest(DIST_PATH + '/'));
 });
 
 /**
@@ -89,7 +104,7 @@ gulp.task('bower', ['cleanBower'], function() {
 /**
  * Run our local development server, and watch for changes.
  */
-gulp.task('run', ['bower', 'css', 'js', 'images'], function() {
+gulp.task('run', ['bower', 'css', 'js', 'images', 'views'], function() {
   liveReload.listen();
 
   // If any new Bower components are installed -- copy them over into assets.
@@ -99,16 +114,16 @@ gulp.task('run', ['bower', 'css', 'js', 'images'], function() {
   gulp.watch(DIST_PATH + '/assets/bower/**').on('change', liveReload.changed);
 
   // If any stylus files are changed, recompile the CSS.
-  gulp.watch('./assets/css/*.styl', ['css']).on('change', liveReload.changed);
+  gulp.watch('./assets/css/**', ['css']).on('change', liveReload.changed);
 
   // If any images are changed, reload the live server.
-  gulp.watch('./assets/images/*', ['images']).on('change', liveReload.changed);
+  gulp.watch('./assets/images/**', ['images']).on('change', liveReload.changed);
 
   // If any Jade templates change, reload the live server.
-  gulp.watch('./views/*.jade').on('change', liveReload.changed);
+  gulp.watch('./views/**', ['views']).on('change', liveReload.changed);
 
   // If any JS code changes, reload the live server.
-  gulp.watch('./assets/js/*.js', ['js']).on('change', liveReload.changed);
+  gulp.watch('./assets/js/**', ['js']).on('change', liveReload.changed);
 });
 
 /**
