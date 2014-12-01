@@ -5,12 +5,12 @@ block vars
 
 block body
   .row
-    .welcome.col-xs-6.col-xs-offset-3
+    .welcome.col-xs-10.col-xs-offset-1.col-md-6.col-md-offset-3
       p.
         A fun and casual web show where I interview happy programmers about the
         most <i>awesome</i> and fun project they've ever worked on.
 
-  .row
+  .row.hidden-xs
     .subscribe.col-xs-8.col-xs-offset-2
       form(action='//rdegges.us5.list-manage.com/subscribe/post?u=ac8a69447e872cf6ddf171977&amp;id=3b90dcf285', method='post', role='form', target='_blank')
         input(type='hidden', name='b_ac8a69447e872cf6ddf171977_3b90dcf285')
@@ -37,9 +37,9 @@ block body
   //hr
   h2 About
   .row.about
-    .col-xs-4.avatar-box
+    .hidden-xs.col-md-4.avatar-box
       img.img-responsive.img-circle.avatar(src='/assets/images/rdegges-avatar.png', alt='rdegges avatar', height='150', width='172')
-    .col-xs-8
+    .col-xs-10.col-xs-offset-1.col-md-8
       p.
         I'm Randall Degges, and I'm a happy programmer who likes to write
         code and build stuff.  I always wanted to watch a show where
