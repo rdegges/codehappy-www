@@ -4,6 +4,7 @@
  * Our build processes which make managing this static site simpler =)
  */
 
+var awspublish = require('gulp-awspublish');
 var bower = require('gulp-bower');
 var connect = require('connect');
 var del = require('del');
@@ -132,6 +133,28 @@ gulp.task('run', ['clean', 'bower', 'css', 'js', 'images', 'views', 'server'], f
 
   // If any JS code changes, reload the live server.
   gulp.watch('./assets/js/*.js', ['js']).on('change', liveReload.changed);
+});
+
+/**
+ * Deploy the public facing site to S3.
+ */
+gulp.task('deploy', ['clean', 'bower', 'css', 'js', 'images', 'views'], function() {
+  // Always disable debug mode when publishing.
+  DEBUG = false;
+
+  var aws = JSON.parse(fs.readFileSync('./aws.json'));
+  var publisher = awspublish.create({
+    key: aws.key,
+    secret: aws.secret,
+    bucket: 'www.codehappy.io',
+  });
+
+  gulp.src('./dist/**')
+    .pipe(publisher.publish({
+      'Cache-Control': 'max-age=2592000, public',
+    }))
+    .pipe(publisher.sync())
+    .pipe(awspublish.reporter());
 });
 
 /**
