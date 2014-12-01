@@ -43,14 +43,14 @@ img
 
 footer
   text-align center
-  font-size .8em
+  font-size 1em
 
-@media (min-width: 992px)
+@media (max-width: 768px)
   footer
-    font-size 1em
+    font-size .8em
 // ====================
 
-// Avatar styling.
+// About styling.
 // ====================
 .avatar-box
   margin-top 0em !important
@@ -58,16 +58,19 @@ footer
 .about img
   vertical-align top
   margin-top 0em
+
+.about p
+  text-align justify
 // ====================
 
 // Welcome text styling.
 // ====================
 .welcome p
-  font-size 1.5em
+  font-size 2em
 
-@media (min-width: 992px)
+@media (max-width: 768px)
   .welcome p
-    font-size 2em
+    font-size 1.5em
 
 .welcome
   text-align justify
@@ -76,11 +79,6 @@ footer
 
 // Email subscription styling.
 // ====================
-.subscribe
-  //width 45em
-  //margin-left auto
-  //margin-right auto
-
 .subscribe form
   margin-top 4em
   margin-bottom 6em
@@ -114,6 +112,31 @@ footer
 .episode h3
   font-size 2em
 
+@media (max-width: 768px)
+  .episode h3
+    font-size 1.5em
+
 .episode p
   text-align justify
+
+@media (max-width: 768px)
+  .episode p
+    font-size 1.2em
+
+.embed-container
+  position relative
+  padding-bottom 56.25%
+  height 0
+  overflow hidden
+  max-width 100%
+  height auto
+
+.embed-container iframe
+.embed-container object
+.embed-container embed
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
 // ====================

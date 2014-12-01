@@ -17,37 +17,41 @@ block body
         input.input-lg.input-email(type='email', name='EMAIL', placeholder='you@example.com', required=true)
         input.btn.btn-lg.btn-default.input-button(type='submit', value='Subscribe')
 
-  hr
+  //hr
   //h2 Episodes
   //.row.episodes
-  //  .col-xs-6.col-xs-offset-3
+  //  .col-xs-12.col-md-6.col-md-offset-3
   //    .episode
-  //      iframe(src='//player.vimeo.com/video/112845324', width='500', height='281', frameborder='0', webkitallowfullscreen=true, mozallowfullscreen=true, allowfullscreen=true)
+  //      .embed-container
+  //        iframe(src='//player.vimeo.com/video/112845324', frameborder='0', webkitallowfullscreen=true, mozallowfullscreen=true, allowfullscreen=true)
   //      h3 EP 1 - "High School Hacking"
   //      p.
   //        Learn how Joey Degges became a kingpin at his high school by running a
   //        secretive web company.
   //    hr
-  //  .col-xs-6.col-xs-offset-3
+  //  .col-xs-12.col-md-6.col-md-offset-3
   //    .episode
-  //      iframe(src='//player.vimeo.com/video/112753503', width='500', height='281', frameborder='0', webkitallowfullscreen=true, mozallowfullscreen=true, allowfullscreen=true)
+  //      .embed-container
+  //        iframe(src='//player.vimeo.com/video/112753503', frameborder='0', webkitallowfullscreen=true, mozallowfullscreen=true, allowfullscreen=true)
   //      h3 "Blah Blah"
   //      p.
   //        A test episode about nothing.
-  //hr
+
+  hr
   h2 About
-  .row.about
-    .hidden-xs.col-md-4.avatar-box
-      img.img-responsive.img-circle.avatar(src='/assets/images/rdegges-avatar.png', alt='rdegges avatar', height='150', width='172')
-    .col-xs-10.col-xs-offset-1.col-md-8
-      p.
-        I'm Randall Degges, and I'm a happy programmer who likes to write
-        code and build stuff.  I always wanted to watch a show where
-        passionate programmers talk about the coolest and most fun things
-        they've ever worked on.
-      p.
-        Unfortunately, that show didn't exist.  <b>So I made this.</b>
-      p.
-        My goal with <b>Code Happy</b> is to produce quality shorts that are
-        inspirational, motivating, and most of all: <i>fun</i>.
+  .row
+    .about
+      .col-md-4.hidden-xs.hidden-sm.avatar-box
+        img.img-responsive.img-circle.avatar(src='/assets/images/rdegges-avatar.png', alt='rdegges avatar', height='150', width='172')
+      .col-md-8.col-xs-12
+        p.
+          I'm Randall Degges, and I'm a happy programmer who likes to write
+          code and build stuff.  I always wanted to watch a show where
+          passionate programmers talk about the coolest and most fun things
+          they've ever worked on.
+        p.
+          Unfortunately, that show didn't exist.  <b>So I made this.</b>
+        p.
+          My goal with <b>Code Happy</b> is to produce quality shorts that are
+          inspirational, motivating, and most of all: <i>fun</i>.
   hr
