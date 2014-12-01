@@ -146,7 +146,7 @@ gulp.task('deploy', ['clean', 'bower', 'css', 'js', 'images', 'views'], function
   var publisher = awspublish.create({
     key: aws.key,
     secret: aws.secret,
-    bucket: 'www.codehappy.io',
+    bucket: aws.bucket,
   });
 
   gulp.src('./dist/**')
