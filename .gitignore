@@ -1,5 +1,6 @@
 *.css
 *.html
+*.json
 .DS_store
 bower_components
 dist
