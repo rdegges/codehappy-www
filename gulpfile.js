@@ -4,6 +4,8 @@
  * Our build processes which make managing this static site simpler =)
  */
 
+var fs = require('fs');
+
 var awspublish = require('gulp-awspublish');
 var bower = require('gulp-bower');
 var connect = require('connect');
@@ -138,7 +140,7 @@ gulp.task('run', ['clean', 'bower', 'css', 'js', 'images', 'views', 'server'], f
 /**
  * Deploy the public facing site to S3.
  */
-gulp.task('deploy', ['clean', 'bower', 'css', 'js', 'images', 'views'], function() {
+gulp.task('deploy', function() {
   // Always disable debug mode when publishing.
   DEBUG = false;
 
@@ -151,7 +153,7 @@ gulp.task('deploy', ['clean', 'bower', 'css', 'js', 'images', 'views'], function
 
   gulp.src('./dist/**')
     .pipe(publisher.publish({
-      'Cache-Control': 'max-age=2592000, public',
+      'Cache-Control': 'max-age=2592000, public'
     }))
     .pipe(publisher.sync())
     .pipe(awspublish.reporter());
