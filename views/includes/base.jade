@@ -1,0 +1,37 @@
+block vars
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Code Happy - #{title}
+    link(href='/assets/bower/bootswatch/paper/bootstrap.min.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/style.css', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Ubuntu', rel='stylesheet' type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Droid+Serif', rel='stylesheet' type='text/css')
+    <!--[if lt IE 9]>
+    script(src='/assets/bower/html5shiv/dist/html5shiv.min.js')
+    script(src='/assets/bower/respond/dest/respond.min.js')
+    <![endif]-->
+    script(src='/assets/bower/jquery/dist/jquery.min.js')
+  body
+    .container
+      header
+        .icon
+          img.img-responsive.img-rounded(src='/assets/images/happy-robot-sketch.jpg', alt='happy robot sketch')
+        h1 Code Happy
+      block body
+      footer
+        p.
+          Built with love by <a href="http://www.rdegges.com">Randall Degges</a>
+          (<a href="https://twitter.com/rdegges">@rdegges</a>).
+    script(src='/assets/bower/bootstrap/dist/js/bootstrap.min.js')
+    script(type='text/javascript').
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-11364428-28', 'auto');
+      ga('send', 'pageview');
