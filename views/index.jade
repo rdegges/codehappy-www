@@ -4,16 +4,18 @@ block vars
   - var title = 'A Web Show About Happy Programming'
 
 block body
-  .welcome
-    p.
-      A fun and casual web show where I interview happy programmers about the
-      most <i>awesome</i> and fun project they've ever worked on.
+  .row
+    .welcome.col-xs-6.col-xs-offset-3
+      p.
+        A fun and casual web show where I interview happy programmers about the
+        most <i>awesome</i> and fun project they've ever worked on.
 
-  .subscribe
-    form(action='//rdegges.us5.list-manage.com/subscribe/post?u=ac8a69447e872cf6ddf171977&amp;id=3b90dcf285', method='post', role='form', target='_blank')
-      input(type='hidden', name='b_ac8a69447e872cf6ddf171977_3b90dcf285')
-      input.input-lg.input-email(type='email', name='EMAIL', placeholder='you@example.com', required=true)
-      input.btn.btn-lg.btn-default.input-button(type='submit', value='Subscribe')
+  .row
+    .subscribe.col-xs-8.col-xs-offset-2
+      form(action='//rdegges.us5.list-manage.com/subscribe/post?u=ac8a69447e872cf6ddf171977&amp;id=3b90dcf285', method='post', role='form', target='_blank')
+        input(type='hidden', name='b_ac8a69447e872cf6ddf171977_3b90dcf285')
+        input.input-lg.input-email(type='email', name='EMAIL', placeholder='you@example.com', required=true)
+        input.btn.btn-lg.btn-default.input-button(type='submit', value='Subscribe')
 
   hr
   //h2 Episodes
