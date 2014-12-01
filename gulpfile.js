@@ -89,16 +89,9 @@ gulp.task('js', function() {
 });
 
 /**
- * Wipe out all old Bower files.
- */
-gulp.task('cleanBower', function() {
-  del.sync([DIST_PATH + '/assets/bower'], { force: true });
-});
-
-/**
  * Copy all bower components into our asset path.
  */
-gulp.task('bower', ['cleanBower'], function() {
+gulp.task('bower', function() {
   bower()
     .pipe(gulp.dest(DIST_PATH + '/assets/bower'));
 });
@@ -128,16 +121,16 @@ gulp.task('run', ['clean', 'bower', 'css', 'js', 'images', 'views', 'server'], f
   gulp.watch('./bower_components/**', ['bower']).on('change', liveReload.changed);
 
   // If any stylus files are changed, recompile the CSS.
-  gulp.watch('./assets/css/*', ['css']).on('change', liveReload.changed);
+  gulp.watch('./assets/css/*.styl', ['css']).on('change', liveReload.changed);
 
   // If any images are changed, reload the live server.
-  gulp.watch('./assets/images/*', ['images']).on('change', liveReload.changed);
+  gulp.watch('./assets/images/**', ['images']).on('change', liveReload.changed);
 
   // If any Jade templates change, reload the live server.
-  gulp.watch('./views/*', ['views']).on('change', liveReload.changed);
+  gulp.watch(['./views/*.jade', './views/includes/*.jade'], ['views']).on('change', liveReload.changed);
 
   // If any JS code changes, reload the live server.
-  gulp.watch('./assets/js/*', ['js']).on('change', liveReload.changed);
+  gulp.watch('./assets/js/*.js', ['js']).on('change', liveReload.changed);
 });
 
 /**
