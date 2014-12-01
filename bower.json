@@ -1,0 +1,21 @@
+{
+  "name": "codehappy-www",
+  "version": "1.0.0",
+  "authors": [
+    "Randall Degges <r@rdegges.com>"
+  ],
+  "license": "UNLICENSE",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1",
+    "jquery": "~2.1.1",
+    "html5shiv": "~3.7.2",
+    "respond": "~1.4.2",
+    "bootswatch": "~3.3.1+2"
+  }
+}
