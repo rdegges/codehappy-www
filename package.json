@@ -21,7 +21,7 @@
   },
   "homepage": "http://www.codehappy.io",
   "dependencies": {
-    "bower": "^1.6.5",
+    "bower": "^1.7.3",
     "connect": "^3.3.3",
     "del": "^2.0.2",
     "gulp": "^3.8.10",
